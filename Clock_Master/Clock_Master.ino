@@ -81,7 +81,7 @@ void setup() {
 
   Wire.begin();
   //Serial.begin(9600);
-  setTime(23, 22, 40, 1, 1, 2001);
+  setTime(23, 51, 40, 1, 1, 2001);
 
   for (int thisPin = 1; thisPin < 14; thisPin++) { //Set pins to be output
   pinMode(thisPin, OUTPUT);
@@ -105,7 +105,7 @@ void loop() {
   switchDigit(1);
   //Write the Hour
   value = hour();   //Put Hour into a variable
-  if((value >= 22 and minute() > 30) or value > 22 or value < 6 or (value <= 6 and minute() < 15)) {
+  if((value >= 22 and minute() > 30) or value > 22 or value < 5 or (value <= 5 and minute() < 45)) {
       Serial.println(value);
       for (int thisPin = 1; thisPin < 14; thisPin++) { //Set pins to be output
         digitalWrite(thisPin, LOW);
